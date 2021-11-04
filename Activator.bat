@@ -26,3 +26,12 @@ echo - Windows 10 Pro Education
 echo - Windows 10 Enterprise LTSB
 echo - Windows 10 Pro for Workstations
 echo - Windows 11 Home
+echo - Windows 11 Pro
+echo - Windows 11 Pro for Workstations
+echo - Windows 11 Pro Education
+echo - Windows 11 Enterprise
+echo - Windows 11 Education
+echo.&
+echo.&
+echo ====================================&
+echo Activating your Windows... &
