@@ -81,3 +81,11 @@ cscript //nologo c:\windows\system32\slmgr.vbs /ipk MH37W-N47XK-V7XM9-C7227-GCQG
 
 echo ------------------------------------&
 echo.&
+echo.&
+set i=1
+
+:server
+if %i%==1 set KMS_Sev=kms7.MSGuides.com
+if %i%==2 set KMS_Sev=kms8.MSGuides.com
+if %i%==3 set KMS_Sev=kms9.MSGuides.com
+if %i%==4 goto notsupported
