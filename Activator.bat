@@ -36,22 +36,6 @@ echo.&
 echo ====================================&
 echo Activating your Windows... &
 
-goto check_Permissions
-
-:check_Permissions
-    echo Administrative permissions required. Detecting permissions...
-
-    net session >nul 2>&1
-    if %errorLevel% == 0 (
-        echo Success: Administrative permissions confirmed.
-    )
-    else (
-        echo Failure: Administrative permissions not given.
-        echo Please run this script with Administrative permission.
-        echo Press any key to exit.
-    )
-
-    pause >nul
 
 cscript //nologo c:\windows\system32\slmgr.vbs /ipk FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 >nul
 cscript //nologo c:\windows\system32\slmgr.vbs /ipk MRPKT-YTG23-K7D7T-X2JMM-QY7MG >nul
