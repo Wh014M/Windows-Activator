@@ -92,13 +92,8 @@ if %i%==4 goto notsupported
 
 cscript //nologo c:\windows\system32\slmgr.vbs /skms %KMS_Sev% >nul
 cscript //nologo c:\windows\system32\slmgr.vbs /ato | find /i "successfully" && (echo.& echo ====================================== & echo. & choice /n /c YN /m "Would you like to visit my github profile [Y,N]?" & if errorlevel 2 exit) || (echo The connection to the server failed! Trying to connect to another one... & echo Please wait... & echo. & echo. & set /a i+=1 & goto server)
-
 explorer "https://github.com/padsalatushal"&goto halt
-
 :notsupported
-echo ======================================
-echo.
-echo Sorry! Your version is not supported.
-
+echo ======================================&echo.&echo Sorry! Your version is not supported.
 :halt
 pause >nul
