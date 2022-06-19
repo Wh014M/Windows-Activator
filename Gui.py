@@ -1,5 +1,6 @@
 from tkinter import *
-import os
+import os,ctypes
+import tkinter
 root = Tk()
 
 root.geometry('500x400')
@@ -8,10 +9,30 @@ root.minsize(450,300)
 
 root.title('Windows activator by Padsala Tushal')
 edition = 0
+
+# Function to check if the application is running as an Administrator
+def isAdmin():
+    try:
+        is_admin = (os.getuid() == 0)
+    except AttributeError:
+        is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
+    return is_admin
+
+
+
+if isAdmin():
+    print("Windows Activator By Padsala Tushal")
+else:
+    root.destroy()
+    root1 = Tk()
+    root1.geometry('300x300')
+    Label(root1,text="Run as Administrator!!", font=("Times New Roman", 20, "italic")).pack()
+    root1.mainloop()
+
 def sel():
    global edition 
    edition = var.get()
-print(edition)
+# print(edition)
 var = StringVar()
 R1 = Radiobutton(root, text="Home", variable=var, value='TX9XD-98N7V-6WMQ6-BX7FG-H8Q99',
                   command=sel)
