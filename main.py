@@ -46,8 +46,13 @@ print(edition)
 # install kms client key
 os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /ipk {edition}')
 
-# connect to kms server
-os.system('cscript //nologo c:\windows\system32\slmgr.vbs /skms s8.uk.to')
 
-# Activate Windows 
-os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
+
+
+os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /skms s008.uk.to')
+a = os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
+
+if (a != 0):
+    os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /skms s9.us.to')
+    os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
+
