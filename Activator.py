@@ -12,6 +12,7 @@ if isAdmin():
     print("Windows Activator By Padsala Tushal")
 else:
     print("Run the program as Administrator!!")
+    input("Press any key to exit")
     exit()
 
 # view license details
@@ -51,6 +52,7 @@ elif (choice == 9):
     edition = Enterprise_N
 else:
     print('Invalid choice')
+    input("Press any key to exit")
     exit()
 
 
@@ -66,3 +68,4 @@ a = os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
 if (a != 0):
     os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /skms s9.us.to')
     os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
+input("Press any key to exit")
