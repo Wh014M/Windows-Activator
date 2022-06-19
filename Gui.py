@@ -1,5 +1,5 @@
 from tkinter import *
-
+import os
 root = Tk()
 
 root.geometry('500x400')
@@ -7,14 +7,11 @@ root.minsize(450,300)
 # root.maxsize(700, 400)
 
 root.title('Windows activator by Padsala Tushal')
-
-
+edition = 0
 def sel():
+   global edition 
    edition = var.get()
-   print(edition)
-
-
-
+print(edition)
 var = StringVar()
 R1 = Radiobutton(root, text="Home", variable=var, value='TX9XD-98N7V-6WMQ6-BX7FG-H8Q99',
                   command=sel)
@@ -53,12 +50,26 @@ R9 = Radiobutton(root, text="Enterprise N", variable=var, value='DPH2V-TTNVB-4X9
 R9.pack( anchor = W)
 
 
+def activate():
+    # print(edition)
+
+    # install kms client key
+    os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /ipk {edition}')
 
 
+    # Try to connect to kms server 1
+    os.system('cscript //nologo c:\windows\system32\slmgr.vbs /skms s8.uk.to')
+    a = os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
 
-
+    # If first kms server is not working then try to connect to second kms server
+    if (a != 0):
+        os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /skms s9.us.to')
+        os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
 
 label = Label(root)
 label.pack()
+
+btn = Button(root, text = 'Activate',command = activate)
+btn.pack(side = BOTTOM)  
 
 root.mainloop()
