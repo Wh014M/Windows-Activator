@@ -1,5 +1,6 @@
 import ctypes, os
 
+# Function to check if the application is running as an Administrator
 def isAdmin():
     try:
         is_admin = (os.getuid() == 0)
@@ -8,16 +9,15 @@ def isAdmin():
     return is_admin
 
 if isAdmin():
-    print("Script by padsala tushal")
+    print("Windows Activator By Padsala Tushal")
 else:
     print("Run the program as Administrator!!")
     exit()
+
 # view license details
 # os.system('cscript //nologo c:\windows\system32\slmgr.vbs /dlv')
 
-
 # KMS Client Key
-
 Home = 'TX9XD-98N7V-6WMQ6-BX7FG-H8Q99'
 Home_N = '3KHY7-WNT83-DGQKR-F7HPR-844BM'
 Home_Single_Language = '7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH'
@@ -49,23 +49,20 @@ elif (choice == 8):
     edition = Enterprise
 elif (choice == 9):
     edition = Enterprise_N
-
 else:
     print('Invalid choice')
     exit()
-    
-print(edition)
+
 
 # install kms client key
 os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /ipk {edition}')
 
 
-
-
-os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /skms s008.uk.to')
+# Try to connect to kms server 1
+os.system('cscript //nologo c:\windows\system32\slmgr.vbs /skms s8.uk.to')
 a = os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
 
+# If first kms server is not working then try to connect to second kms server
 if (a != 0):
     os.system(f'cscript //nologo c:\windows\system32\slmgr.vbs /skms s9.us.to')
     os.system('cscript //nologo c:\windows\system32\slmgr.vbs /ato')
-
