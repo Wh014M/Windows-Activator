@@ -1,5 +1,17 @@
-import os
+import ctypes, os
 
+def isAdmin():
+    try:
+        is_admin = (os.getuid() == 0)
+    except AttributeError:
+        is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
+    return is_admin
+
+if isAdmin():
+    print("Script by padsala tushal")
+else:
+    print("Run the program as Administrator!!")
+    exit()
 # view license details
 # os.system('cscript //nologo c:\windows\system32\slmgr.vbs /dlv')
 
@@ -40,7 +52,8 @@ elif (choice == 9):
 
 else:
     print('Invalid choice')
-
+    exit()
+    
 print(edition)
 
 # install kms client key
